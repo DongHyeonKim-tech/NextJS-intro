@@ -3,17 +3,27 @@ import { useRouter } from 'next/router';
 
 const NavBar = () => {
   const router = useRouter();
-  console.log('router: ', router);
   return (
     <nav>
       <Link href="/">
-        {/* style, className 등은 a 태그에 적용해야 */}
-        <a style={{color: router.pathname === '/' ? 'red' : 'white'}}>Home</a>
+        <a className={ router.pathname === '/' ? 'active' : '' }>Home</a>
       </Link>
-      {/* Link tag에 style, className 등 선언해도 적용 X */}
-      <Link style={{color: 'blue'}} href="/about">
-        About Us
+      <Link href="/about">
+        <a className={ router.pathname === '/about' ? 'active' : '' }>About Us</a>
       </Link>
+      <style jsx>
+        {`
+          nav {
+            background-color: tomato;
+          }
+          a {
+            text-decoration: none;
+          }
+          .active {
+            color: yellow;
+          }
+        `}
+      </style>
     </nav>
   )
 }

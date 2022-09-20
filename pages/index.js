@@ -1,11 +1,17 @@
-import NavBar from '../components/NavBar';
 const Home = () => {
   return (
     <div>
-      <NavBar/>
-      <h1>
+      <h1 className='active'>
         Hello!
       </h1>
+      {/* Global Styling */}
+      {/* <style jsx global>
+        {`
+          a {
+            color: white;
+          }
+        `}
+      </style> */}
     </div>
   )
 };
